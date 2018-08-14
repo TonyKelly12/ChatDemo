@@ -1,0 +1,26 @@
+p {
+  font-size: 1.7rem;
+  margin-bottom: 5px;
+  color: black;
+}
+
+ion-input, ion-textarea {
+  font-size: 1.7rem;
+}
+
+.whiteBackground {
+  background-color: white;
+}
+
+.bottomBorder {
+  border-bottom: 1px solid grey;
+}
+
+.invalid {
+  border: 1px solid #ea6153;
+}
+
+.edit-btn {
+  background-color: #488aff;
+  color: white;
+}

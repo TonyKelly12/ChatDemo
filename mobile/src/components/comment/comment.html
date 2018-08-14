@@ -1,0 +1,57 @@
+<ion-card class="comment-rounded">
+    <ion-row>
+        <ion-col col-2>
+            <img tappable class="circlePicSmall"
+                [src]="sanitizer.bypassSecurityTrustResourceUrl('data:img/png;base64,' + comment.postedBy.profilePic)">
+        </ion-col>
+        <ion-col col-10>
+            <div width="100%">
+                <div fittext [minFontSize]=16 [maxFontSize]="20" style="margin-top: 2px;">
+                    {{comment.postedBy.displayName}}
+                </div>
+                <div fittext [minFontSize]=14 [maxFontSize]="16" style="padding-top: 3px;">
+                    {{comment.postedOn}}
+                </div>
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col col-12>
+            <div style="width: 100%;">
+                <div fittext [minFontSize]=18 [maxFontSize]="18">
+                    {{comment.message}}
+                </div>
+            </div>
+        </ion-col>
+    </ion-row>
+    <ng-container *ngIf="footer">
+        <ion-row>
+            <ion-col col-1>&nbsp;</ion-col>
+            <ion-col col-10 style="padding-bottom: 0px;"><hr style="margin-top: 5px; margin-bottom: 0px;"></ion-col>
+            <ion-col col-1>&nbsp;</ion-col>
+        </ion-row>
+        <ion-row justify-content-center>
+            <ion-col col-8 style="padding-top: 0px; padding-bottom: 0px;">
+                <button ion-button icon-only clear style="margin-top: 0px; padding-right: 0px;" (click)="likePost()">
+                    <ion-icon style="margin-top: -15px; padding-right: 0px;" name="heart"></ion-icon>
+                </button>
+                <button ion-button icon-only clear style="margin-top: 0px; padding-left: 0px;" (click)="replyToPost()"
+                    [disabled]="comment.feedType != FEED_TYPE.forum">
+                    <ion-icon style="margin-top: -15px; padding-right: 0px;" name="chatbubbles"></ion-icon>
+                </button>
+                <button ion-button icon-only clear style="margin-top: 0px;" (click)="sharePost()">
+                    <ion-icon style="margin-top: -15px;" name="share-alt"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-4 style="padding-top: 0px; padding-bottom: 0px;">
+                <div *ngIf="comment.feedType != FEED_TYPE.comment; else isComment">
+                    <a style="text-decoration: none; font-size: 1.15em;" href='#' 
+                        (click)="$event.preventDefault(); replyToPost()">
+                        {{comment.commentsNbr}} Comments
+                    </a>
+                </div>
+                <ng-template #isComment>&nbsp;</ng-template>
+            </ion-col>
+        </ion-row>
+    </ng-container>
+</ion-card>

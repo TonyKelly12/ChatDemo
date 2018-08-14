@@ -1,0 +1,46 @@
+
+<h1>Lets Get Started</h1>
+<h3>Please fill out your profile below to get started!</h3>
+
+<ion-card id="profile-card">
+<div id="profile">
+
+<div class="row">
+    <div class="col-md-12 col-md-offset-3">
+
+      <form id="infoForm" [formGroup]="infoForm" (ngSubmit)="setProfile()">
+
+        <div class="form-group">
+          <label>Username</label>
+          <br>
+          <input type="text" formControlName="username" class="form-control">
+          <div *ngIf="username.invalid && username.dirty">A username is required</div>
+        </div>
+
+        <div class="form-group">
+          <label>First Name</label>
+          <br>
+          <input type="text" class="form-control" formControlName="first_name">
+
+        </div>
+
+        <div class="form-group">
+          <label>Last Name</label>
+          <br>
+          <input type="text" class="form-control" formControlName="last_name">
+
+        </div>
+
+        <div *ngIf="infoForm.valid">Click submit to register your account.</div>
+
+        <br>
+
+        <button type="submit" [disabled]="!infoForm.valid" ion-button color="secondary" class="btn btn-block">Submit</button>
+
+
+      </form>
+    </div>
+  </div>
+
+</div>
+</ion-card>

@@ -1,0 +1,64 @@
+<ion-menu [content]="content" >
+    <ion-header>
+
+      <ion-toolbar>
+        <ion-title>Menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="mainMenu">
+              <a (click)="dashboard()">
+                <ion-card class="menuTileLeft">
+                  <ion-icon name="ios-home-outline" class="menuIcon"></ion-icon>
+                  <h2>Home</h2>
+                </ion-card>
+              </a>
+
+              <a (click)="friendsList()">
+                <ion-card class="menuTileRight">
+                  <ion-icon name="ios-contacts-outline" class="menuIcon"></ion-icon>
+                  <h2>Friends</h2>
+                </ion-card>
+              </a>
+
+              <!-- <a (click)="challenge()">
+                <ion-card class="menuTileLeft">
+                  <ion-icon name="ios-trophy-outline" class="menuIcon"></ion-icon>
+                  <h2>Teams</h2>
+                </ion-card>
+              </a> -->
+
+              <!-- <a (click)="rankings()">
+                <ion-card class="menuTileRight">
+                  <ion-icon name="ios-ribbon-outline" class="menuIcon"></ion-icon>
+                  <h2>Rankings</h2>
+                </ion-card>
+              </a> -->
+
+              <a (click)="chatList()">
+                <ion-card class="menuTileRight">
+                  <ion-icon name="ios-chatboxes-outline" class="menuIcon"></ion-icon>
+                  <h2>Messages</h2>
+                </ion-card>
+              </a>
+
+              <a (click)="showLogout()" style="display:inline-block; margin-top: 10px;">
+                <ion-icon class="logOutButton" name="ios-log-out-outline" style="vertical-align: middle;"></ion-icon>
+                <span class="logOut">Logout</span>
+              </a>
+
+              <!-- <a (click)="reportPopover($event)">
+                <ion-card class="menuTileRight">
+                  <ion-icon name="ios-bookmark-outline" class="menuIcon"></ion-icon>
+                  <h2>Report</h2>
+                </ion-card>
+              </a> -->
+
+    </ion-content>
+  </ion-menu>
+
+
+
+  <ion-nav id="nav" #content swipeBackEnabled="false" [root]="rootPage">
+
+
+  </ion-nav>

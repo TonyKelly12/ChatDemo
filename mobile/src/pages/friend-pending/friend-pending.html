@@ -1,0 +1,55 @@
+
+<ion-header>
+  <nav-bar></nav-bar>
+</ion-header>
+<ion-content>
+  
+  <ion-item>
+  <ion-row>
+    <ion-col>
+      <button ion-button icon-left clear small (click)='friendsListPage()'>
+        <ion-icon name="contacts-outline"></ion-icon>
+        <div>Friends</div>
+      </button>
+    </ion-col>
+    <ion-col>
+      <button ion-button icon-left clear small class="tabOpen">
+        <ion-icon name="contact-outline"></ion-icon>
+        <div>Friend Request</div>
+      </button>
+    </ion-col>
+    <ion-col center text-center>
+      <button ion-button icon-left clear small (click)='invitePage()'>
+        <ion-icon name="people-outline"></ion-icon>
+        <div>Invite</div>
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-item>
+  
+  <ion-list>
+
+      <ion-item *ngFor = 'let request of friendRequest | async'>
+          
+            <ion-avatar item-start>
+              <img src="{{request.sender.photoURL}}">
+            </ion-avatar>
+            <h2>{{request.sender.first_name}}</h2>
+         
+          
+            <button ion-button color="secondary" (click)="approve(request.key , request.sender)">
+              <ion-icon name="person-add"></ion-icon>
+              Approve
+            </button>
+        
+          
+              <button ion-button color="danger" (click) ='deny(request.key, request.sender)'>
+                  <ion-icon name="alert"></ion-icon>
+                  Deny
+                </button>
+           
+        </ion-item>
+</ion-list>
+
+
+</ion-content>

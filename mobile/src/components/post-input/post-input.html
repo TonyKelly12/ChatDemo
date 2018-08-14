@@ -1,0 +1,15 @@
+<ion-card style="border-radius: 7px; border: 1px solid grey;">
+    <ion-row>
+        <ion-col col-9>
+            <ion-textarea id="textInput" autosize rows="1" placeholder="Type Here..." [(ngModel)]="newPostText"
+                (resized)="textInputResized()">
+            </ion-textarea>
+        </ion-col>
+        <ion-col col-3 align-self-end>
+            <button ion-button style="background-color: gold; color: black"
+                (click)="addPost()">
+                Send
+            </button>
+        </ion-col>
+    </ion-row>
+</ion-card>

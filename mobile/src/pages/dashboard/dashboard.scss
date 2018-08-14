@@ -1,0 +1,26 @@
+page-dashboard {
+  ion-avatar {
+    border: solid;
+    border-color: #F9F9F0;
+    border-radius: 50%;
+  }
+
+  .profilePicture {
+    border: none;
+  }
+
+  .item p {
+    white-space: normal;
+    padding-bottom: 5px;
+    margin-bottom: 11px !important;
+  }
+
+  ion-col {
+    // box-shadow:0 .125rem .25rem rgba(0,0,0,.075)!important;
+  }
+
+  .submit {
+    padding: 5px;
+    margin: 10px;
+  }
+}

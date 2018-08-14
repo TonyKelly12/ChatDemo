@@ -1,0 +1,24 @@
+<div class="emoji-picker">
+  <div class="emoji-items">
+    <ion-slides pager>
+      <ion-slide *ngFor="let friend of friendsArr">
+        <ion-card>
+          <ion-item>
+            <ion-avatar item-start class="emoji-items">
+              <img src="{{friend.photoURL}}">
+            </ion-avatar>
+          </ion-item>
+          <ion-card-title>
+            <h1>{{friend.username}}</h1>
+          </ion-card-title>
+          <ion-row>
+            <button ion-button color="primary" (click)="sendFriend(friend)">
+              <ion-icon name="person-add"></ion-icon>
+              Add
+            </button>
+          </ion-row>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+</div>

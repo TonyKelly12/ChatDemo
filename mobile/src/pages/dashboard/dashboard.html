@@ -1,0 +1,22 @@
+<!--header on dashboard-->
+<ion-header>
+  <nav-bar></nav-bar>
+
+</ion-header>
+
+<ion-content class="background">
+  <h1>Welcome </h1>
+  
+  <!-- Observables must be asyncPiped -->
+  <ng-container *ngIf="(currentUser | async) || {} as currentUser">
+    
+    {{currentUser.username}}
+    <div id="register-form" *ngIf="currentUser.uid && currentUser.username === '' ">
+        
+      <profile-editor></profile-editor>
+
+    </div>  
+
+</ng-container>
+  
+</ion-content>

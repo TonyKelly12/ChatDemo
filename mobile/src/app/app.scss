@@ -1,0 +1,255 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+//
+// WARNING! The wrath of Edgar will fall upon you if you put something here
+//          that should have stayed local to the component/page you were
+//          working on. Please use this exclusively for global definitions, eg
+//          stuff that should be accessible to EVERY component.
+
+a{
+  color: #646464;
+}
+
+.background {
+  background-color:#D1F6F1;
+}
+
+.background-with-image {
+  background-image: url("../assets/login-background.png");
+  background-size: cover;
+}
+
+.friend-background{
+  background-image: url("../assets/chatBackkground.png");
+  background-size: cover;
+}
+
+ion-avatar {
+  border: 0px !important;
+}
+
+.circlePicNavbar {
+  width: 40px;
+  height: 40px;
+  display: inline-block;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  padding: 3px;
+  vertical-align: middle;
+}
+
+.circlePic {
+  width: 50px;
+  height: 50px;
+  display: block;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  padding: 3px;
+  margin-left: 2px;
+  margin-right: 0px;
+  margin-top: 0px;
+}
+
+.circlePicSmall {
+  width: 40px;
+  height: 40px;
+  display: block;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  padding: 3px;
+  margin-left: 2px;
+  margin-right: 0px;
+  margin-top: 0px;
+}
+
+.center-text{
+  text-align: center;
+}
+
+.center-image{
+  margin:0 auto;
+}
+
+.normalWhiteSpace{
+  white-space: normal;
+}
+
+.rotate-90{
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+.moreOptions{
+  color: color($colors,dark);
+}
+
+.noRightPadding{
+  padding-right: 0px;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+.topCommentBorder{
+  border-top: 1px solid #ccc;
+}
+
+.bottomCommentBorder{
+  border-bottom: 1px solid #ccc;
+}
+
+.leftCommentBorder{
+  border-left: 2px solid #ccc;
+}
+
+.replyBackground{
+  background-color: color($colors,replyBackgr);
+}
+
+.reactionsPadding{
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.groupImage{
+  max-height:150px;
+  max-width:150px;
+  height:auto;
+  width:auto;
+}
+
+.postIcons {
+  color: gray;
+}
+
+.replyPadding {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.replyButton {
+  border: 1px black;
+  color: blue;
+  height: 20px !important;
+}
+
+.menuTileLeft{
+  width:44%;
+  height:150px;
+  float:left;
+  margin:5px;
+  margin-top: 5px !important;
+  margin-right: 7.5px;
+  text-align:center;
+}
+
+.menuTileRight{
+  width:44%;
+  height:150px;
+  float:left;
+  margin:5px;
+  margin-top: 5px !important;
+  margin-left: 7.5px;
+  text-align:center;
+}
+
+.menuIcon{
+  font-size:110px;
+  color: #646464;
+}
+
+.mainMenu{
+  background-color: #D1F6F1 !important;
+}
+
+.mainNav {
+  padding: 5px;
+  text-align: center;
+}
+
+.mainNav .row {
+  align-items: center;
+}
+
+.avatar {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 40px !important;  //any size
+  max-height: 40px !important;
+  // webkit-border-radius:50%;
+  // moz-border-radius:50%;
+  // border-radius: 50% !important;
+  float: right;
+}
+
+.backArrow {
+  color: black;
+  font-size: 30px;
+}
+
+.logOut{
+  // text-align:center;
+  // clear:both;
+  font-size:15px;
+  // padding-top: 10px;
+  padding-left:5px;
+  // position:relative;
+  // display: inline-block;
+  color: gray;
+}
+
+.logOutButton{
+  clear:both;
+  font-size:30px;
+  padding-left: 10px;
+  position:relative;
+  display: inline-block;
+  color: gray;
+}
+
+// Corey's CSS
+.toolbar-ios {
+  min-height: 62px;
+}
+
+//Standard look and feel for card headers. See color-pallette.png.
+  .card-header {
+    background-color: gray;
+    color: white;
+    border-style: ridge;
+    border-width: 2px;
+    border-color: black;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+  }
+
+// standard look and feel for cards. See color-pallette.png.
+  .card {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    border-color: black;
+  }

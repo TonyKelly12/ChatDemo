@@ -1,0 +1,10 @@
+<ion-card>
+  <ion-card-header>
+    Overall Rankings
+  </ion-card-header>
+
+  <ion-list *ngFor="let member of queryAdjoiningRankingsForMonth()">
+    <ion-item> {{ member.rank }} : {{member.alias}} - {{ member.points }} </ion-item>
+  </ion-list>
+
+</ion-card>

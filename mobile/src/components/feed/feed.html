@@ -1,0 +1,54 @@
+<ion-card *ngIf="feed.name">
+    <ion-card-header style="padding-left: 0px; padding-right: 0px;">
+        <ng-container *ngIf="feed.type != FEED_TYPE.chat">
+            <ion-row>
+                <ion-col col-12 text-center>
+                    <h1>{{feed.name}}</h1>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col col-12 text-center>
+                    <h3>({{feed.desc}})</h3>
+                </ion-col>
+            </ion-row>
+        </ng-container>
+        <ng-container *ngIf="feed.type == FEED_TYPE.forum">
+            <ion-row>
+                <ion-col col-12>
+                    <post-input [feed]="feed"></post-input>
+                </ion-col>
+            </ion-row>
+        </ng-container>
+    </ion-card-header>
+    <ion-card-content style="padding-left: 0px; padding-right: 0px;">
+        <ng-container *ngIf="feed.type == FEED_TYPE.forum || feed.type == FEED_TYPE.announcement; else otherFeeds">
+            <ng-container *ngFor="let post of feed.posts | slice:0:1;">
+                <ion-row>
+                    <ion-col col-12>
+                        <ng-container *ngIf="feed.type == FEED_TYPE.forum; else otherPosts">
+                            <post [postID]="post.postID" [feedType]="feed.type" [showFooter]="true"></post>
+                        </ng-container>
+                        <ng-template #otherPosts>
+                            <post [postID]="post.postID" [feedType]="feed.type" [showFooter]="false"></post>
+                        </ng-template>
+                    </ion-col>
+                </ion-row>
+            </ng-container>
+              <ion-col col-12 text-center *ngIf="feed.posts.length > 1">
+              <button ion-button icon-left clear small (click)="viewMorePosts()">
+                <ion-icon name="ribbon-outline"></ion-icon>
+                <div>View More announcements</div>
+              </button>
+              </ion-col>
+        </ng-container>
+        <ng-template #otherFeeds>
+            <ng-container *ngFor="let post of feed.posts">
+                <ion-row>
+                    <ion-col col-12>
+                        <post [postID]="post.postID" [feedType]="feed.type" [showFooter]="true"></post>
+                    </ion-col>
+                </ion-row>
+            </ng-container>
+        </ng-template>
+    </ion-card-content>
+</ion-card>

@@ -1,0 +1,14 @@
+.sourcemaps/
+.vscode/
+.Ds_Store
+node_modules/
+hooks/
+platforms/
+plugins/
+package-lock.json
+www/
+typings
+*.ps1
+.idea/
+lib/
+

@@ -1,0 +1,26 @@
+<ion-navbar class="mainNav">
+  <ion-row>
+    <ion-col col-2>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu" class="hamburger"></ion-icon>
+      </button>
+    </ion-col>
+    <!-- <ion-col col-5 offset-1>
+      <ion-title>
+        Home
+      </ion-title>
+    </ion-col>
+    <ion-col col-2 style="text-align: center;">
+      <button ion-button icon-only clear nav-bar-button id="chatNavBtn">
+        <ion-icon name="ios-chatboxes-outline" style="font-size: 35px; padding: 0px; padding-right: 5px; color:black;" >
+        </ion-icon>
+        <ion-badge class="messageBadge>" style="color: white; background-color: #F4C119;">2</ion-badge>
+      </button>
+    </ion-col> -->
+    <ion-col col-2 offset-8>
+      <ion-avatar class="avatar" tappable id="avatarNavBtn" (click)="viewMyProfile()">
+        <img [attr.src]="photoURL">
+      </ion-avatar>
+    </ion-col>
+  </ion-row>
+</ion-navbar>

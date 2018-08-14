@@ -1,0 +1,67 @@
+<ion-header>
+  <nav-bar></nav-bar>
+ 
+    
+        <ion-fab left >
+            <button ion-fab mini><ion-icon name="people"></ion-icon></button>
+            <ion-fab-list>
+              <ion-item  *ngFor="let member of chatMembers | async "> <ion-avatar ion-fab><img src="{{member.photoURL}}" alt=""></ion-avatar>
+
+              </ion-item>
+              
+              
+            </ion-fab-list>
+          </ion-fab>
+        
+
+      <!-- <ion-slides>
+        <ion-slide *ngFor="let name of chatNames">
+          <h2>{{name}}</h2>
+        </ion-slide>
+      </ion-slides> -->
+  
+</ion-header>
+
+<ion-content class="friend-background">
+  <div class="message-wrap">
+    <div *ngFor="let msg of messages | async" class="message" 
+    [class.left]="msg.fromUID == this.currentUserID "
+     [class.right]="msg.fromUID != this.currentUserID "
+     (press)='showEditButton()'
+     >
+
+      <img class="user-img" alt="" [src]="msg.photoURL">
+      <!-- <ion-spinner name="dots" *ngIf="msg.status === 'pending'"></ion-spinner> -->
+      <div class="msg-detail">
+        <div class="msg-info">
+          <p>
+            {{msg.username}}&nbsp;&nbsp;&nbsp;{{msg.time | relativeTime}}
+          </p>
+        </div>
+        <div class="msg-content">
+          <span class="triangle"></span>
+          <p class="line-breaker ">{{msg.message}}</p>
+        </div>
+        <div *ngIf='showEdit && msg.fromUID == this.currentUserID'>
+            <button>Edit Message</button>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer no-border [style.height]="showFriendPicker ? '255px' : '55px'">
+  <div class="input-wrap">
+    <button ion-button clear icon-only item-right (click)="switchFriendPicker()">
+      <ion-icon name="person-add"></ion-icon>
+    </button>
+    <textarea #chat_input placeholder="Text Input" [(ngModel)]="editorMsg" (keyup.enter)="addPost()" (focusin)="onFocus()">
+      </textarea>
+      <button ion-button clear icon-only item-right (click)="addPost()">
+        <ion-icon name="ios-send" ios="ios-send" md="md-send"></ion-icon>
+      </button>
+  </div>
+   <friend-picker [chatID]="chatID" (friendEvent)="addToChat($event)"></friend-picker> 
+</ion-footer>

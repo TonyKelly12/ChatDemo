@@ -1,0 +1,7 @@
+{
+  "name": "SocialDemo",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

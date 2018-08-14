@@ -1,0 +1,174 @@
+page-chats {
+    h2 {
+        color: white;
+    }
+    ion-content .scroll-content {}
+    ion-header {
+        background: linear-gradient(360deg, rgba(59, 190, 208, 1) 0%, rgba(60, 211, 217, 1) 14%, rgba(209, 246, 241, 1) 63%);
+    }
+    ion-footer {
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.11);
+        background-color: #fff;
+        height: 255px;
+    }
+    .line-breaker {
+        white-space: pre-line;
+        color: rgb(255, 255, 255)
+    }
+    .input-wrap {
+        padding: 5px;
+        display: flex;
+        textarea {
+            flex: 1;
+            border: 0;
+            border-bottom: 1px #ad1283;
+            border-style: solid;
+        }
+    }
+    .header-wrap {
+        padding: 5px;
+        display: flex;
+        ion-card {
+            flex: 1;
+            border: 0;
+            border-bottom: 1px #ad1283;
+            border-style: solid;
+        }
+        ion-fab[right] {
+            right: 0px;
+        }
+    }
+    .message-wrap {
+        padding: 0 10px;
+        padding-top: 25px;
+        .message {
+            position: relative;
+            padding: 7px 0;
+            .user-img {
+                position: absolute;
+                border-radius: 45px;
+                width: 45px;
+                height: 45px;
+                box-shadow: 0 0 2px rgba(0, 0, 0, 0.36);
+            }
+            .msg-detail {
+                width: 100%;
+                display: inline-block;
+                p {
+                    margin: 0;
+                }
+                .msg-info {
+                    p {
+                        font-size: .8em;
+                        color: #fff;
+                    }
+                }
+                .msg-content {
+                    position: relative;
+                    margin-top: 5px;
+                    border-radius: 5px;
+                    padding: 8px;
+                    border: 1px solid #ddd;
+                    color: #fff;
+                    width: auto;
+                    max-width: 80%;
+                    span.triangle {
+                        background-color: #fff;
+                        border-radius: 2px;
+                        height: 8px;
+                        width: 8px;
+                        top: 12px;
+                        display: block;
+                        border-style: solid;
+                        border-color: #ddd;
+                        border-width: 1px;
+                        -webkit-transform: rotate(45deg);
+                        transform: rotate(45deg);
+                        position: absolute;
+                    }
+                }
+            }
+        }
+        .message.left {
+            .msg-content {
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f57505+0,a15401+50,f38f03+100 */
+                background: #f57505;
+                /* Old browsers */
+                background: -moz-linear-gradient(45deg, #f57505 0%, #a15401 50%, #f38f03 100%);
+                /* FF3.6-15 */
+                background: -webkit-linear-gradient(45deg, #f57505 0%, #a15401 50%, #f38f03 100%);
+                /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(45deg, #f57505 0%, #a15401 50%, #f38f03 100%);
+                /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f57505', endColorstr='#f38f03', GradientType=1);
+                /* IE6-9 fallback on horizontal gradient */
+                float: left;
+            }
+            .msg-detail {
+                padding-left: 60px;
+            }
+            .user-img {
+                left: 0;
+            }
+            .msg-content {
+                color: #ffffff;
+                span.triangle {
+                    border-top-width: 0;
+                    border-right-width: 0;
+                    left: -5px;
+                }
+            }
+        }
+        .message.right {
+            .msg-detail {
+                padding-right: 60px;
+                .msg-info {
+                    text-align: right;
+                }
+            }
+            .user-img {
+                right: 0;
+            }
+            ion-spinner {
+                position: absolute;
+                right: 10px;
+                top: 50px;
+            }
+            .msg-content {
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#cb60b3+0,ad1283+50,de47ac+100;Pink+3D */
+                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c337a5+0,940e70+50,d52199+100 */
+                background: #c337a5;
+                /* Old browsers */
+                background: -moz-linear-gradient(45deg, #c337a5 0%, #940e70 50%, #d52199 100%);
+                /* FF3.6-15 */
+                background: -webkit-linear-gradient(45deg, #c337a5 0%, #940e70 50%, #d52199 100%);
+                /* Chrome10-25,Safari5.1-6 */
+                background: linear-gradient(45deg, #c337a5 0%, #940e70 50%, #d52199 100%);
+                /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c337a5', endColorstr='#d52199', GradientType=1);
+                /* IE6-9 fallback on horizontal gradient */
+                float: right;
+                span.triangle {
+                    background-color: #ad1283;
+                    border-bottom-width: 0;
+                    border-left-width: 0;
+                    right: -5px;
+                }
+            }
+        }
+    }
+    #message-box {
+        height: 18%;
+        margin-top: 5px;
+    }
+    .card {
+        h2,
+        p {
+            color: white;
+        }
+        border-radius: 10%;
+    }
+    #avatar {
+        display: inline-block
+    }
+}

@@ -1,0 +1,63 @@
+<!--
+  Generated template for the FriendInvitePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <nav-bar></nav-bar>
+  <!-- <ion-navbar class="mainNav">
+    <ion-title>FriendInvite</ion-title>
+   >
+  </ion-navbar> -->
+
+</ion-header>
+
+
+<ion-content >
+    <ion-item>
+        <ion-row>
+          <ion-col>
+            <button ion-button icon-left clear small (click)='toFriendsList()'>
+              <ion-icon name="contacts-outline"></ion-icon>
+              <div>Friends</div>
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button icon-left clear small (click)='pendingRequestPage()'>
+              <ion-icon name="contact-outline"></ion-icon>
+              <div>Friend Request</div>
+            </button>
+          </ion-col>
+          <ion-col center text-center>
+            <button ion-button icon-left clear small class="tabOpen">
+              <ion-icon  name="people-outline"></ion-icon>
+              <div>Invite</div>
+            </button>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+        
+  <ion-grid>
+      <ion-list >
+          <ion-item *ngFor = 'let invite of displayInvites '>
+            <ion-avatar item-start>
+              <img src="{{invite.photoURL}}">
+            </ion-avatar>
+            <h2>{{invite.username}}</h2>
+            <p>{{invite.email}}</p>
+            <button type="button" ion-button color="secondary" (click)="inviteUser(invite)" class="btn btn-block">Add To Friends List</button>
+          </ion-item>
+        </ion-list>
+      <ion-row>
+        <ion-col offset-3>
+          <h1> </h1>
+        </ion-col>
+
+</ion-row>
+<button ion-button style="background-color: gold; color: white" (click) ='toFriendsList()'>
+    Back to friends list
+  </button>
+
+  </ion-grid>
+</ion-content>

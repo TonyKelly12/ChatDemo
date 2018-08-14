@@ -1,0 +1,17 @@
+page-friend-invite {
+    $loading-ios-spinner-color:(
+  default: orange
+);
+
+    ion-spinner.spiner line {
+        *{
+         stroke:orange !important;   
+        }
+        &.spinner-circles circle,
+          &.spinner-bubbles circle,
+          &.spinner-dots circle {
+            fill: orange !important;
+          }
+      }
+ 
+}

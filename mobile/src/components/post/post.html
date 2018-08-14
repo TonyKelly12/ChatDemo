@@ -1,0 +1,84 @@
+<ion-card tappable (click)="post.postType == POST_TYPE.slim && goToChat(post)"
+          [class.post-rounded]="post.feedType != FEED_TYPE.chat || post.postType == POST_TYPE.slim"
+          [class.chat-rounded-self]="post.feedType == FEED_TYPE.chat && post.postType == POST_TYPE.full &&
+            post.postedBy.personID == _global.myPersonProperties.personID"
+          [class.chat-rounded-other]="post.feedType == FEED_TYPE.chat && post.postType == POST_TYPE.full &&
+            post.postedBy.personID != _global.myPersonProperties.personID">
+    <ng-container *ngIf="post.postType == POST_TYPE.full; else slimPost">
+        <ion-row>
+            <ion-col col-2>
+                <img tappable class="circlePic"
+                    [src]="sanitizer.bypassSecurityTrustResourceUrl('data:img/png;base64,' + post.postedBy.profilePic)">
+            </ion-col>
+            <ion-col col-10>
+                <div width="100%">
+                    <div fittext [minFontSize]=16 [maxFontSize]="20" style="margin-top: 2px;">
+                        {{post.postedBy.displayName}}
+                    </div>
+                    <div fittext [minFontSize]=14 [maxFontSize]="16" style="padding-top: 3px;">
+                        {{post.postedOn}}
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-12>
+                <div width="100%">
+                    <div fittext [minFontSize]=18 [maxFontSize]="18">
+                        {{post.message}}
+                    </div>
+                </div>
+            </ion-col>
+        </ion-row>
+    </ng-container>
+    <ng-template #slimPost>
+        <ion-row>
+            <ion-col col-2>
+                <img class="circlePic"
+                    [src]="sanitizer.bypassSecurityTrustResourceUrl('data:img/png;base64,' + post.postedBy.profilePic)">
+            </ion-col>
+            <ion-col col-10>
+                <ng-container *ngIf="post.postedBy.personID == _global.myPersonProperties.personID; else postedByOther">
+                    <div style="width: 100%;">
+                        <div fittext [minFontSize]=16 [maxFontSize]=22>{{post.postedTo.displayName}}</div>
+                    </div>
+                </ng-container>
+                <ng-template #postedByOther>
+                    <div style="width: 100%;">
+                        <div fittext [minFontSize]=16 [maxFontSize]=22>{{post.postedBy.displayName}}</div>
+                    </div>
+                </ng-template>
+                    <div style="width: 100%; padding-top: 5px;">
+                        <div fittext [minFontSize]=14 [maxFontSize]=18>{{post.postedOn}}</div>
+                    </div>
+            </ion-col>
+        </ion-row>
+    </ng-template>
+    <ng-container *ngIf="footer">
+        <ion-row>
+            <ion-col col-1>&nbsp;</ion-col>
+            <ion-col col-10 style="padding-bottom: 0px;"><hr style="margin-top: 5px; margin-bottom: 0px;"></ion-col>
+            <ion-col col-1>&nbsp;</ion-col>
+        </ion-row>
+        <ion-row justify-content-center>
+            <ion-col col-8 style="padding-top: 0px; padding-bottom: 0px;">
+                <button ion-button icon-only clear style="margin-top: 0px; padding-right: 0px;" (click)="likePost()">
+                    <ion-icon style="margin-top: -15px; padding-right: 0px;" name="heart"></ion-icon>
+                </button>
+                <button ion-button icon-only clear style="margin-top: 0px; padding-left: 0px;" (click)="replyToPost()"
+                    [disabled]="post.feedType != FEED_TYPE.forum">
+                    <ion-icon style="margin-top: -15px; padding-right: 0px;" name="chatbubbles"></ion-icon>
+                </button>
+                <button ion-button icon-only clear style="margin-top: 0px;" (click)="sharePost()">
+                    <ion-icon style="margin-top: -15px;" name="share-alt"></ion-icon>
+                </button>
+            </ion-col>
+            <ion-col col-4 style="padding-top: 0px; padding-bottom: 0px;">
+                <a style="text-decoration: none; font-size: 1.15em;" href='#' 
+                    (click)="$event.preventDefault(); replyToPost()">
+                    {{post.commentsNbr}} Comments
+                </a>
+            </ion-col>
+        </ion-row>
+    </ng-container>
+</ion-card>

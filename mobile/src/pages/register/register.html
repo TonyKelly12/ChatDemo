@@ -1,0 +1,80 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="background">
+
+  <div id="register">
+    <div class="container-fluid">
+      <img id="logo" src="../../assets/jimbotLogoOfficial.png" />
+                <!-- Observables must be asyncPiped -->
+      <ng-container *ngIf="(authService.user | async) || {} as user">
+
+
+        <ion-card>
+
+          <ion-card-content>
+            <div id="register-form" *ngIf="!user.uid">
+              <div class="row">
+                <div class="col-md-12 col-md-offset-3">
+                  <form [formGroup]="registerForm" (ngSubmit)="tryRegister()">
+                    <div class="form-group">
+                      <label>Email address</label>
+                      <br>
+                      <input type="email" formControlName="email" class="form-control">
+                      <div *ngIf="email.invalid && email.dirty">Your email doesn't look quite right....</div>
+                    </div>
+                    <div class="form-group">
+                      <label>Password</label>
+                      <br>
+                      <input type="password" class="form-control" formControlName="password">
+                      <div *ngIf="password.invalid && password.touched">password must be between 6 and 24 characters and contain at leasst one number</div>
+                      <label class="error">{{errorMessage}}</label>
+                      <label class="success">{{successMessage}}</label>
+                    </div>
+                    <div *ngIf="registerForm.valid">Click submit to register your account.</div>
+                    <br>
+                    <button type="submit" [disabled]="!registerForm.valid" ion-button color="secondary" class="btn btn-block">Submit</button>
+                  </form>
+                </div>
+              </div>
+              <!-- <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <button type="button" class="btn btn-primary btn-block" (click)="tryFacebookLogin()">Register with Facebook</button>
+        </div>
+      </div> -->
+              <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                  <button type="button" ion-button color="danger" (click)="tryGoogleLogin()" class="btn btn-danger btn-block">Sign-up with Google</button>
+                </div>
+              </div>
+              <!-- <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+          <button type="button" class="btn btn-info btn-block" (click)="tryTwitterLogin()">Register with Twitter</button>
+        </div>
+      </div> -->
+              <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                  <p>Already have an account?
+                    <a (click)='loginPage()'>Login</a>
+                  </p>
+                </div>
+              </div>
+
+            </div>
+
+
+            
+          </ion-card-content>
+        </ion-card>
+      </ng-container>
+    </div>
+
+
+  </div>
+</ion-content>

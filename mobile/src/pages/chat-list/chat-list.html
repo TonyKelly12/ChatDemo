@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>chatList</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list *ngFor='let chat of chats | async' >
+    <ion-item >
+      <ion-avatar item-start (click)='chatPage(chat)'>
+        <img src="{{chat.lastMessage.photoURL}}">
+      </ion-avatar>
+          <h2 (click)='chatPage(chat)'>{{chat.lastMessage.username}}</h2>
+          <p (click)='chatPage(chat)' >{{chat.lastMessage.message}}</p>
+          <button ion-button icon-left clear item-end color="danger" (click)="presentPopover($event, chat)">
+            <ion-icon name="trash"></ion-icon>
+            Delete
+          </button>
+    </ion-item>
+  </ion-list>
+</ion-content>

@@ -1,0 +1,46 @@
+page-login {
+  .card {
+    margin-top: 10vh;
+    background-color: rgba(112, 109, 109, 0.561);
+    border-radius: 10px;
+  }
+
+  label,
+  p {
+    color: aliceblue;
+  }
+
+  .header {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+    color: aliceblue;
+  }
+
+  .row {
+    margin-top: 10px;
+  }
+
+  .error {
+    color: red;
+    background-color: white;
+    border-radius: 10px;
+    align: center;
+  }
+
+  #login-form {
+    // margin-top: 10px;
+    // margin-left: 20vw;
+    margin-left: 20%;
+    text-align: left;
+  }
+
+  #jimbot-logo {
+    width: 50%;
+    height: 60%;
+    margin-left: 23vw;
+    margin-top: 8%;
+    margin-bottom: -8%;
+    border-radius: 10px;
+  }
+}
