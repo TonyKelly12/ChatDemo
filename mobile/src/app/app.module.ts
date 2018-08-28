@@ -44,8 +44,7 @@ import { SetError } from '../providers/set-errors/set-errors';
 import { ErrorMessagesProvider } from '../providers/error-messages/error-messages';
 import { FcmProvider } from '../providers/fcm/fcm';
 import { FileStorageProvider } from '../providers/file-storage/file-storage';
-import { StepCounterServiceProvider } from '../providers/step-counter-service/step-counter-service';
-import { EmojiProvider } from '../providers/emoji/emoji';
+
 import {FriendsProvider} from '../providers/friends/friends-service';
 import {GooglePlus} from '@ionic-native/google-plus';
 
