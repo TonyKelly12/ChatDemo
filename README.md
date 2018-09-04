@@ -1,5 +1,5 @@
-# View a video demo of this project by clicking link below
-    https://youtu.be/uT0sNpiAKnM
+# To view a demo video of the project visit: 
+https://youtu.be/uT0sNpiAKnM
 
 # How to get up and running as quickly as possible
 
