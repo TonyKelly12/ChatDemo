@@ -1,7 +1,12 @@
 # To view a demo video of the project visit: 
 https://youtu.be/uT0sNpiAKnM
 
-## **Warning** This code is intended to be used in a video tutorial series at www.coded-colors.com There are some incorrect decessions purposely made as far as architecture of the code and cloud functions that will be discussed in up coming videos and corrected in the final repo. DO NOT TAKE THE CODE TO PRODUCTION IF USING IN YOUR APPLICATION. 
+## *Warning* 
+This code is intended to be used in a video tutorial series at www.coded-colors.com that goes of refactoring soneone's code. There are some incorrect decessions purposely made as far as architecture of the code and cloud functions that will be discussed in up coming videos and corrected in the final repo. DO NOT TAKE THE CODE TO PRODUCTION IF USING IN YOUR APPLICATION. 
+
+# Final Project Repo
+For the final project repo visit https://github.com/TonyKelly12/List-N-Chat
+
 
 # How to get up and running as quickly as possible
 
